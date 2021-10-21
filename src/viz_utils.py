@@ -8,8 +8,7 @@ def plot_graph(edges, path_fig=None, take_n=300):
     for row in edges.select("src", "dst").take(take_n):
         Gplot.add_edge(row["src"], row["dst"])
 
-    plt.figure(figsize=(30, 15))
-    plt.subplot(121)
+    plt.figure(figsize=(15, 10))
     nx.draw(Gplot, with_labels=True, arrows=True)
 
     if path_fig is not None:

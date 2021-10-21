@@ -12,7 +12,10 @@ class LabelPropagationAlgorithm():
 
     def __call__(self, id_):
         id_label = self.communities.filter(f"id == {id_}").select("label").collect()[0]["label"]
-        recommendations = self.communities.filter(f"label == {id_label}")
+        recommendations = \
+            self.communities.filter(f"label == {id_label}").\
+            filter(f"id != {id_}").\
+            sort(desc("reviews"))
         return recommendations
 
 
@@ -46,4 +49,4 @@ class JaccardSimilarity():
         return self.g.vertices. \
             join(self.similarities_df, self.g.vertices["id"] == self.similarities_df["id"], "inner"). \
             drop(self.similarities_df.id). \
-            sort(desc("jaccard"))
+            sort(desc("jaccard"), desc("reviews"))
