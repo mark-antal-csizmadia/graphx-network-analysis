@@ -1,5 +1,9 @@
 # graphx-network-analysis
 
+<a href="https://nbviewer.org/github/mark-antal-csizmadia/graphx-network-analysis/blob/main/graphx-network-analysis.ipynb">
+	<img align="center" src="https://img.shields.io/badge/Jupyter-nbviewer-informational?style=flat&logo=Jupyter&logoColor=F37626&color=blue" />
+</a>
+
 Graph analysis for recommendations with GraphX and GraphFrames in Python with PySpark. The goal is to use a data set of historical product co-purchases to recommended products for future co-purchases.
 
 ## Setup
